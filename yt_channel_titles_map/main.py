@@ -6,8 +6,8 @@ from channel_titles import find_all_titles, count_words, make_word_cloud
 from stop_words import get_stop_words
 
 if __name__ == '__main__':
-    channel_name = input("Channel Name: ").strip()
     youtube = youtube_authenticate()
+    channel_name = input("Channel Name: ").strip()
     titles = find_all_titles(youtube, channel_name)
     stop_words = [w.upper() for w in get_stop_words("en")]
     title_words = count_words(titles, stop_words)
